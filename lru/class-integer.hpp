@@ -3,20 +3,18 @@
 
 class Integer {
 public:
-	static int counter;
-	int val;
-	
-	Integer(int val) : val(val) {counter++;}
-	~Integer() {counter--;}
+    static int counter;
+    int val;
 
-	Integer(const Integer &rhs) {
-		val = rhs.val;
-		counter++;
-	}
+    Integer(int val) : val(val) { counter++; }
+    ~Integer() { counter--; }
 
-	bool operator==(const Integer &rhs){
-		return val == rhs.val;
-	}
+    Integer(const Integer &rhs) {
+        val = rhs.val;
+        counter++;
+    }
+
+    bool operator==(const Integer &rhs) { return val == rhs.val; }
 };
 
 int Integer::counter = 0;
